@@ -18,6 +18,8 @@ public class Resource {
     private ArrayList<PostComment> _comments;
 
 
+
+
     public ArrayList<String> get_tags() {
         return _tags;
     }
