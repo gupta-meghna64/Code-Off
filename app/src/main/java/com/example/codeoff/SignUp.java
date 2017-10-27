@@ -97,9 +97,8 @@ public class SignUp extends AppCompatActivity{
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
                                         User user = new User();
-                                        user.setNam(Name);
-                                        user.setEmail(emailID);
-                                        user.setTypeOfUser(selectedtext);
+                                        user.name = Name;
+                                        user.typeOfUser = type;
                                         mDatabase.child("Private User Data").child(mFirebaseAuth.getCurrentUser().getUid()).push().setValue(user);
                                         Intent intent = new Intent(SignUp.this, SignIn.class);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
