@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">CodeOff</string>
+    <string name="user_prompt">Type of User</string>
+
+    <string-array name="usertype_array">
+        <item>Student</item>
+        <item>Alumni</item>
+        <item>Professor</item>
+    </string-array>
 </resources>
