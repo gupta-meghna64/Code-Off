@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -27,12 +28,21 @@ public class SignIn extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
-        mFirebaseAuth = FirebaseAuth.getInstance();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signin);
-
+        mFirebaseAuth = FirebaseAuth.getInstance();
         useremail = (EditText) findViewById(R.id.editTextEmail);
         userpassword = (EditText) findViewById(R.id.editTextPassword);
+
+
+        TextView tv = (TextView) findViewById(R.id.goToSignUp);
+        tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(SignIn.this, SignUp.class);
+                startActivity(i);
+            }
+        });
 
 
         Button signInButton = (Button) findViewById(R.id.loginButton);

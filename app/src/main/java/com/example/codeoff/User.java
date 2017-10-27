@@ -6,8 +6,8 @@ package com.example.codeoff;
 
 public class User {
 
-    public String Name;
-    public String EmailID;
+    public String name;
+    public String emailID;
     public String typeOfUser;
     public String imageID;
     public int yearOfPassing;
@@ -17,70 +17,35 @@ public class User {
 
 
     public String getName() {
-        return Name;
+        return name;
     }
 
-    public void setName(String name) {
-        Name = name;
-    }
-
-    public String getEmailID() {
-        return EmailID;
-    }
-
-    public void setEmailID(String emailID) {
-        EmailID = emailID;
+    public String getMail() {
+        return emailID;
     }
 
     public String getTypeOfUser() {
         return typeOfUser;
     }
 
-    public void setTypeOfUser(String typeOfUser) {
-        this.typeOfUser = typeOfUser;
-    }
-
     public String getImageID() {
         return imageID;
-    }
-
-    public void setImageID(String imageID) {
-        this.imageID = imageID;
     }
 
     public int getYearOfPassing() {
         return yearOfPassing;
     }
 
-    public void setYearOfPassing(int yearOfPassing) {
-        this.yearOfPassing = yearOfPassing;
-    }
-
     public String getGithubLink() {
         return githubLink;
-    }
-
-    public void setGithubLink(String githubLink) {
-        this.githubLink = githubLink;
     }
 
     public String getLinkedinLink() {
         return linkedinLink;
     }
 
-    public void setLinkedinLink(String linkedinLink) {
-        this.linkedinLink = linkedinLink;
-    }
-
     public String getWebsiteLink() {
         return websiteLink;
     }
-
-    public void setWebsiteLink(String websiteLink) {
-        this.websiteLink = websiteLink;
-    }
-
-
-
 
 }

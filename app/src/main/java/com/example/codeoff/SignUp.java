@@ -2,6 +2,7 @@ package com.example.codeoff;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -32,7 +33,7 @@ import java.util.List;
 
 public class SignUp extends AppCompatActivity{
 
-    protected EditText email;
+    protected EditText useremail;
     protected EditText password;
     protected EditText name;
     protected Button signUpButton;
@@ -41,7 +42,7 @@ public class SignUp extends AppCompatActivity{
     private FirebaseAuth mFirebaseAuth;
     private FirebaseUser mFirebaseUser;
     private DatabaseReference mDatabase;
-
+    public String selectedtext;
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -50,28 +51,36 @@ public class SignUp extends AppCompatActivity{
         mFirebaseAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
         password = (EditText)findViewById(R.id.editTextPassword);
-        email = (EditText)findViewById(R.id.editTextEmail);
+        useremail = (EditText)findViewById(R.id.editTextEmail);
         name = (EditText)findViewById(R.id.editTextName);
 
         signUpButton = (Button) findViewById(R.id.signUpButton);
         mStorage = FirebaseStorage.getInstance().getReference();
 
         RadioGroup radioGroup = (RadioGroup) findViewById(R.id.userRadio);
-        int radioButtonID = radioGroup.getCheckedRadioButtonId();
-        RadioButton radioButton = (RadioButton) radioGroup.findViewById(radioButtonID);
-        final String selectedtext = (String) radioButton.getText();
+
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
+
+                int radioButtonID = radioGroup.getCheckedRadioButtonId();
+                RadioButton radioButton = (RadioButton) radioGroup.findViewById(radioButtonID);
+                selectedtext = (String) radioButton.getText();
+
+            }
+        });
+
+
 
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                String pass = password.getText().toString();
-                String emailID = email.getText().toString();
+                String pass = password.getText().toString().trim();
+                final String emailID = useremail.getText().toString().trim();
                 final String Name = name.getText().toString().trim();
                 final String type = selectedtext;
 
-                pass = pass.trim();
-                emailID = emailID.trim();
 
                 if (pass.isEmpty() || emailID.isEmpty()) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(SignUp.this);
@@ -88,9 +97,8 @@ public class SignUp extends AppCompatActivity{
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if (task.isSuccessful()) {
                                         User user = new User();
-                                        user.setName(Name);
-                                        user.setEmailID(email.getText().toString().trim());
-                                        user.setTypeOfUser(selectedtext);
+                                        user.name = Name;
+                                        user.typeOfUser = type;
                                         mDatabase.child("Private User Data").child(mFirebaseAuth.getCurrentUser().getUid()).push().setValue(user);
                                         Intent intent = new Intent(SignUp.this, SignIn.class);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
