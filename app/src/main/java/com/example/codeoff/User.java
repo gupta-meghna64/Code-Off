@@ -21,7 +21,7 @@ public class User {
     }
 
     public void setNam(String name) {
-        Name = name;
+        this.Name = name;
     }
 
     public String getMail() {
@@ -29,7 +29,7 @@ public class User {
     }
 
     public void setEmail(String emailID) {
-        emailID = emailID;
+        this.emailID = emailID;
     }
 
     public String getTypeOfUser() {
