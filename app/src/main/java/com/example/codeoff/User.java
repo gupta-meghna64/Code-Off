@@ -7,7 +7,7 @@ package com.example.codeoff;
 public class User {
 
     public String Name;
-    public String EmailID;
+    public String emailID;
     public String typeOfUser;
     public String imageID;
     public int yearOfPassing;
@@ -16,20 +16,20 @@ public class User {
     public String websiteLink;
 
 
-    public String getName() {
+    public String getNm() {
         return Name;
     }
 
-    public void setName(String name) {
+    public void setNam(String name) {
         Name = name;
     }
 
-    public String getEmailID() {
-        return EmailID;
+    public String getMail() {
+        return emailID;
     }
 
-    public void setEmailID(String emailID) {
-        EmailID = emailID;
+    public void setEmail(String emailID) {
+        emailID = emailID;
     }
 
     public String getTypeOfUser() {
