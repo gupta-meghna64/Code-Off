@@ -7,14 +7,30 @@
             android:id="@+id/nav_profile"
             android:icon="@drawable/ic_group_black_24dp"
             android:title="Profile" />
+
+        <item
+            android:id="@+id/nav_addresource"
+            android:icon="@drawable/ic_add_circle_black_24dp"
+            android:title="Add Resources" />
+
         <item
             android:id="@+id/nav_resources"
             android:icon="@drawable/ic_menu_gallery"
             android:title="Resources" />
         <item
+            android:id="@+id/nav_addrequests"
+            android:icon="@drawable/ic_add_circle_black_24dp"
+            android:title="Add Requests" />
+
+        <item
             android:id="@+id/nav_requests"
             android:icon="@drawable/ic_create_black_24dp"
             android:title="Requests" />
+        <item
+            android:id="@+id/nav_blogs"
+            android:icon="@drawable/ic_library_books_black_24dp"
+            android:title="Blogs" />
+
 
     </group>
 
