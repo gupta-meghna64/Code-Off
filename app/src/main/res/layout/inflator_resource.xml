@@ -1,301 +1,334 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:weightSum="10"
-    android:padding="20dp"
-    android:orientation="vertical">
 
-    <LinearLayout
+<android.support.v7.widget.CardView android:id="@+id/cardViewTop"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_weight="4"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    card_view:cardBackgroundColor="@android:color/background_light"
+    card_view:cardCornerRadius="4dp"
+    card_view:cardElevation="1dp"
+    card_view:cardUseCompatPadding="true"
+    card_view:contentPaddingBottom="1dp"
+    card_view:contentPaddingTop="1dp"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#3F51B5"
-            android:layout_gravity="center|center_vertical"
-            android:text="Random Resource"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.5">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:text="https://stackoverflow.com/1ncbuwnwjefsijbqhghfujicknjwhsjokmnw"/>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_weight="2"
-        android:weightSum="1">
+        android:layout_height="match_parent"
+        android:weightSum="10"
+        android:padding="20dp"
+        android:id="@+id/inflatorLinearLayout"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:weightSum="1"
-            android:layout_weight="0.6">
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
 
-            <LinearLayout
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:weightSum="1"
-                android:layout_weight="0.5">
+                android:layout_height="wrap_content"
+                android:id="@+id/resourceName"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#3F51B5"
+                android:layout_gravity="center|center_vertical"
+                android:text="Random Resource"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5">
+        </LinearLayout>
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:textColor="#3F51B5"
-                        android:text="Uploaded by"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5">
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Saatvik Jain"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:weightSum="1"
-                android:layout_weight="0.5">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:textColor="#3F51B5"
-                        android:text="Type"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Lecture Notes"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:id="@+id/resourceLink"
+                android:text="https://stackoverflow.com/1ncbuwnwjefsijbqhghfujicknjwhsjokmnw"/>
 
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:weightSum="1"
-            android:layout_margin="6dp"
-            android:layout_weight="0.4">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_weight="2"
+            android:weightSum="1">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/circle"
+                android:orientation="vertical"
+                android:weightSum="1"
+                android:layout_weight="0.6">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:weightSum="1"
+                    android:layout_weight="0.5">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:textColor="#3F51B5"
+                            android:text="Uploaded by"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/uploaderName"
+                            android:text="Saatvik Jain"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:weightSum="1"
+                    android:layout_weight="0.5">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textStyle="bold"
+                            android:textColor="#3F51B5"
+                            android:text="Type"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/resourceType"
+                            android:text="Lecture Notes"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="1"
                 android:layout_margin="6dp"
-                android:layout_weight="0.5">
+                android:layout_weight="0.4">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/circle"
+                    android:layout_margin="6dp"
+                    android:layout_weight="0.5">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="35dp"
+                        android:textColor="#ffffff"
+                        android:textSize="18sp"
+                        android:id="@+id/upvotesView"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:text="51"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/circle2"
+                    android:layout_weight="0.5">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="35dp"
+                        android:textColor="#ffffff"
+                        android:textSize="18sp"
+                        android:id="@+id/downvotesView"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:text="34"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/resourceDescription"
+                android:text="Lorem Ipsum Lorem Ipsum psum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#3F51B5"
+                android:layout_gravity="center|center_vertical"
+                android:text="Tags"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tagLayouts1"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:background="#3599D6"
+                    android:layout_marginRight="8dp"
+                    android:padding="6dp"
+                    android:id="@+id/tag_1"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    android:text="Beginners"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="35dp"
+                    android:textAlignment="center"
+                    android:background="#3599D6"
+                    android:layout_marginRight="8dp"
+                    android:textSize="16sp"
+                    android:id="@+id/tag_2"
+                    android:textStyle="bold"
                     android:textColor="#ffffff"
-                    android:textSize="18sp"
-                    android:layout_gravity="center_horizontal|center_vertical"
-                    android:text="51"/>
+                    android:padding="6dp"
+                    android:text="expert-recommended"/>
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:background="@drawable/circle2"
-                android:layout_weight="0.5">
+                android:layout_height="wrap_content"
+                android:id="@+id/tagLayouts2"
+                android:layout_marginTop="8dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="35dp"
+                    android:textAlignment="center"
+                    android:background="#3599D6"
+                    android:layout_marginRight="8dp"
+                    android:id="@+id/tag_3"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:padding="6dp"
                     android:textColor="#ffffff"
-                    android:textSize="18sp"
-                    android:layout_gravity="center_horizontal|center_vertical"
-                    android:text="34"/>
+                    android:text="expert-recommended"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:id="@+id/tag_4"
+                    android:background="#3599D6"
+                    android:padding="6dp"
+                    android:layout_marginRight="8dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    android:text="Great First Try"/>
+
 
             </LinearLayout>
 
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_weight="1">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Lorem Ipsum Lorem Ipsum psum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.5">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="#3F51B5"
-            android:layout_gravity="center|center_vertical"
-            android:text="Tags"/>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_weight="1">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:background="#3599D6"
-                android:layout_marginRight="8dp"
-                android:padding="6dp"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="#ffffff"
-                android:text="Beginners"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:background="#3599D6"
-                android:layout_marginRight="8dp"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="#ffffff"
-                android:padding="6dp"
-                android:text="expert-recommended"/>
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp">
+            android:layout_weight="0.5">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
-                android:background="#3599D6"
-                android:layout_marginRight="8dp"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:padding="6dp"
-                android:textColor="#ffffff"
-                android:text="expert-recommended"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:background="#3599D6"
-                android:padding="6dp"
-                android:layout_marginRight="8dp"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="#ffffff"
-                android:text="Great First Try"/>
+                android:textColor="#3F51B5"
+                android:layout_gravity="center|center_vertical"
+                android:text="Comments"/>
 
 
         </LinearLayout>
 
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.5">
-
-        <TextView
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="#3F51B5"
-            android:layout_gravity="center|center_vertical"
-            android:text="Comments"/>
+            android:id="@+id/scrollViewLayout">
+
+        </ScrollView>
 
 
     </LinearLayout>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    </ScrollView>
-
-
-</LinearLayout>
+</android.support.v7.widget.CardView>

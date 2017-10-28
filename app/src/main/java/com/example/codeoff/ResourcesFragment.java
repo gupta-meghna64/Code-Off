@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 
 /**
  * Created by HP on 28-10-2017.
@@ -27,5 +29,15 @@ public class ResourcesFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         //you can set the title for your toolbar here for different fragments different titles
         getActivity().setTitle("Resources");
+
+        LinearLayout mainLayout = (LinearLayout) view.findViewById(R.id.verticalLayout);
+        LayoutInflater inflater = getActivity().getLayoutInflater();
+        View v_1 = inflater.inflate(R.layout.inflator_resource,null);
+        v_1.setPadding(0,0,0,16);
+        View v_2 = inflater.inflate(R.layout.inflator_resource,null);
+
+        mainLayout.addView(v_1);
+        mainLayout.addView(v_2);
+
     }
 }
