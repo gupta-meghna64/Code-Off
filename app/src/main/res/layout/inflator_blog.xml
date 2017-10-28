@@ -33,7 +33,7 @@
             android:paddingTop="8dp">
 
             <TextView
-                android:id="@+id/resourceName"
+                android:id="@+id/blogName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|center_vertical"
@@ -42,23 +42,6 @@
                 android:textColor="#3F51B5"
                 android:textSize="20sp"
                 android:textStyle="bold" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:paddingBottom="8dp"
-            android:paddingTop="8dp">
-
-            <TextView
-                android:id="@+id/resourceLink"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:text="https://stackoverflow.com/1ncbuwnwjefsijbqhghfujicknjwhsjokmnw" />
-
 
         </LinearLayout>
 
@@ -113,93 +96,6 @@
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5"
-                    android:orientation="vertical"
-                    android:weightSum="1">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0.5">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Type"
-                            android:textColor="#3F51B5"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0.5">
-
-                        <TextView
-                            android:id="@+id/resourceType"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Lecture Notes" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="6dp"
-                android:layout_weight="0.4"
-                android:weightSum="1">
-
-                <LinearLayout
-                    android:id="@+id/resourceUpvote"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="6dp"
-                    android:layout_weight="0.5"
-                    android:background="@drawable/circle">
-
-
-                    <TextView
-                        android:id="@+id/upvotesView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal|center_vertical"
-                        android:paddingLeft="35dp"
-                        android:text="51"
-                        android:textColor="#ffffff"
-                        android:textSize="18sp" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/resourceDownvote"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="4dp"
-                    android:layout_weight="0.5"
-                    android:background="@drawable/circle2">
-
-                    <TextView
-                        android:id="@+id/downvotesView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal|center_vertical"
-                        android:paddingLeft="35dp"
-                        android:text="34"
-                        android:textColor="#ffffff"
-                        android:textSize="18sp" />
-
-                </LinearLayout>
 
             </LinearLayout>
 
@@ -214,7 +110,7 @@
 
 
             <TextView
-                android:id="@+id/resourceDescription"
+                android:id="@+id/blogDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Lorem Ipsum Lorem Ipsum psum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum" />

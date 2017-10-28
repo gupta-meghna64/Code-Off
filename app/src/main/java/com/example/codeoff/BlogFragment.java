@@ -1,14 +1,12 @@
 package com.example.codeoff;
 
+import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -17,17 +15,15 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
+import org.w3c.dom.Text;
 
 /**
- * Created by HP on 28-10-2017.
+ * Created by jains on 28-10-2017.
  */
 
-public class ResourcesFragment extends Fragment {
+public class BlogFragment extends Fragment {
 
     private DatabaseReference mDatabase;
-    private ArrayList<LinearLayout> allUpvotes = new ArrayList<LinearLayout>();
-    private ArrayList<LinearLayout> allDownvotes = new ArrayList<LinearLayout>();;
 
     @Nullable
     @Override
@@ -42,7 +38,7 @@ public class ResourcesFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         //you can set the title for your toolbar here for different fragments different titles
-        getActivity().setTitle("Resources");
+        getActivity().setTitle("Community Blog");
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
@@ -51,43 +47,31 @@ public class ResourcesFragment extends Fragment {
         mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot d : dataSnapshot.child("Resource").getChildren()) {
+                for (DataSnapshot d : dataSnapshot.child("Blogs").getChildren()) {
 
                     for (DataSnapshot e : d.getChildren()) {
 
-                        Resource r = e.getValue(Resource.class);
-                        View v = inflater.inflate(R.layout.inflator_resource, null);
-                        TextView heading = (TextView) v.findViewById(R.id.resourceName);
-                        TextView link = (TextView) v.findViewById(R.id.resourceLink);
+                        Blog b = e.getValue(Blog.class);
+                        View v = inflater.inflate(R.layout.inflator_blog, null);
+                        TextView title = (TextView) v.findViewById(R.id.blogName);
                         TextView name = (TextView) v.findViewById(R.id.uploaderName);
-                        TextView type = (TextView) v.findViewById(R.id.resourceType);
-                        TextView description = (TextView) v.findViewById(R.id.resourceDescription);
-                        TextView upvotes = (TextView) v.findViewById(R.id.upvotesView);
-                        TextView downvotes = (TextView) v.findViewById(R.id.downvotesView);
-                        allUpvotes.add((LinearLayout) v.findViewById(R.id.resourceUpvote));
-                        allDownvotes.add((LinearLayout) v.findViewById(R.id.resourceDownvote));
-                        heading.setText(r.get_title());
-                        link.setText(r.get_link());
-                        name.setText(r.get_uploader());
-                        type.setText(r.getType());
-                        description.setText(r.get_description());
-                        upvotes.setText(Integer.toString(r.get_upvotes()));
-                        downvotes.setText(Integer.toString(r.get_downvotes()));
+                        TextView description = (TextView) v.findViewById(R.id.blogDescription);
+                        name.setText(b.get_uploader());
+                        description.setText(b.get_description());
 
                         LinearLayout commentsLayout = (LinearLayout) v.findViewById(R.id.scrollViewLayout);
 
-                        for (int i = 0; i < r.get_comments().size(); i++) {
+                        for (int i = 0; i < b.get_comments().size(); i++) {
 
                             TextView tv = new TextView(getActivity());
-                            tv.setText(r.get_comments().get(i).get_text()+"\n"+r.get_comments().get(i).get_commenter());
+                            tv.setText(b.get_comments().get(i).get_text() + "\n" + b.get_comments().get(i).get_commenter());
                             commentsLayout.addView(tv);
                         }
 
 
-                        v.setPadding(0,0,0,16);
+                        v.setPadding(0, 0, 0, 16);
                         mainLayout.addView(v);
                     }
-
 
 
                 }
