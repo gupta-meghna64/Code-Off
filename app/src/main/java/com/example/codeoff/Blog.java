@@ -13,6 +13,22 @@ public class Blog {
     private String _uploader;
     private ArrayList<PostComment> _comments;
 
+    public void set_title(String _title) {
+        this._title = _title;
+    }
+
+    public void set_description(String _description) {
+        this._description = _description;
+    }
+
+    public void set_uploader(String _uploader) {
+        this._uploader = _uploader;
+    }
+
+    public void set_comments(ArrayList<PostComment> _comments) {
+        this._comments = _comments;
+    }
+
     public String get_title() {
         return _title;
     }
