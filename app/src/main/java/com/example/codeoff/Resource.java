@@ -16,6 +16,7 @@ public class Resource {
     private String _uploader;
     private ArrayList<String> _topics;
     private String type;
+    private String _link;
     private ArrayList<PostComment> _comments;
 
 
@@ -50,15 +51,16 @@ public class Resource {
     public String getType() {
         return type;
     }
-    
+
 
     public ArrayList<PostComment> get_comments() {
         return _comments;
     }
 
-
-
-
+    
+    public String get_link() {
+        return _link;
+    }
 
 
 
