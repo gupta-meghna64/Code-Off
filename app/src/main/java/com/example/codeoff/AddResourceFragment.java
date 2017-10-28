@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -37,7 +38,7 @@ public class AddResourceFragment  extends Fragment {
     private DatabaseReference mDatabase;
     private String mUserId;
     private String name;
-
+    private Button share;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -51,6 +52,7 @@ public class AddResourceFragment  extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         //you can set the title for your toolbar here for different fragments different titles
         getActivity().setTitle("Requests");
+        share = (Button) getView().findViewById(R.id.shareResourceButton);
         mFirebaseAuth = FirebaseAuth.getInstance();
         mFirebaseUser = mFirebaseAuth.getCurrentUser();
         mDatabase = FirebaseDatabase.getInstance().getReference();
@@ -86,14 +88,38 @@ public class AddResourceFragment  extends Fragment {
                 }
             });
         }
-        Resource res = new Resource();
-        res.setType(typeResource.getText().toString());
-        res.set_description(descriptionResource.getText().toString());
-        res.set_link(linkResource.getText().toString());
-        res.set_uploader(name);
-        res.set_tags(new ArrayList<String>());
-        mDatabase = FirebaseDatabase.getInstance().getReference();
-        mDatabase.child("Resource").child(Long.toString(count+1)).push().setValue(res);
+
+
+        share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Resource res = new Resource();
+                res.setType(typeResource.getText().toString());
+                res.set_description(descriptionResource.getText().toString());
+                res.set_link(linkResource.getText().toString());
+                res.set_uploader(name);
+                ArrayList<String> a = new ArrayList<String>();
+                a.add("java");
+                a.add("android");
+                res.set_tags(a);
+
+                PostComment c = new PostComment();
+                c.set_commenter("Arpit Bhatia");
+                c.set_text("Comment");
+
+                ArrayList<PostComment> al = new ArrayList<PostComment>();
+                al.add(c);
+
+                res.set_comments(al);
+                res.set_downvotes(1);
+                res.set_upvotes(100);
+                mDatabase = FirebaseDatabase.getInstance().getReference();
+                mDatabase.child("Resource").child(Long.toString(count+1)).push().setValue(res);
+
+            }
+        });
+
 
 
 
