@@ -8,16 +8,30 @@
         android:layout_height="wrap_content"
         android:layout_weight="1.5"
         android:paddingTop="8dp"
+        android:gravity="center"
+        android:layout_gravity="center"
         android:orientation="vertical">
 
-        <de.hdodenhof.circleimageview.CircleImageView
+        <LinearLayout
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/profile_image"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:src="@drawable/suyash"
-            app:civ_border_width="1dp"
-            app:civ_border_color="#FF000000"/>
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:background="@drawable/circle3">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/initialsName"
+                android:text="UR"
+                android:textColor="#ffffff"
+                android:textSize="28sp"/>
+
+        </LinearLayout>
+
+
 
     </LinearLayout>
 
@@ -30,6 +44,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/nameField"
             android:text="Suyash Singh"
             android:textStyle="bold"
             android:textAlignment="center"
@@ -40,6 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="4dp"
+            android:id="@+id/emailField"
             android:text="suyash16105@iiitd.ac.in"
             android:textAlignment="center"
             android:textSize="20sp"
@@ -71,6 +87,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
+                    android:id="@+id/githubIcon"
                     android:layout_gravity="center_horizontal|center_vertical"
                     android:src="@drawable/githublogo"/>
             </LinearLayout>
@@ -79,6 +96,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
+                android:id="@+id/linkedInIcon"
                 android:layout_weight="0.5">
                 <ImageView
                     android:layout_width="wrap_content"
