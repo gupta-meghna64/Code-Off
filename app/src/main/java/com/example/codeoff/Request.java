@@ -6,17 +6,12 @@ import java.util.ArrayList;
  * Created by adsrc on 28/10/17.
  */
 
-public class Resource {
+public class Request {
 
     private String _title;
     private ArrayList<String> _tags;
-    private int _upvotes;
-    private int _downvotes;
     private String _description;
     private String _uploader;
-    private ArrayList<String> _topics;
-    private String type;
-    private String _link;
     private ArrayList<PostComment> _comments;
 
 
@@ -28,13 +23,6 @@ public class Resource {
         return _tags;
     }
 
-    public int get_upvotes() {
-        return _upvotes;
-    }
-
-    public int get_downvotes() {
-        return _downvotes;
-    }
 
     public String get_description() {
         return _description;
@@ -44,24 +32,11 @@ public class Resource {
         return _uploader;
     }
 
-    public ArrayList<String> get_topics() {
-        return _topics;
-    }
-
-    public String getType() {
-        return type;
-    }
 
 
     public ArrayList<PostComment> get_comments() {
         return _comments;
     }
-
-
-    public String get_link() {
-        return _link;
-    }
-
 
 
 }
