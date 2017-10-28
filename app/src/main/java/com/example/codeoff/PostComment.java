@@ -7,15 +7,16 @@ package com.example.codeoff;
 public class PostComment {
 
 
-    private User _commenter;
+    private String _commenter;
     private String _text;
 
 
-    public User get_commenter() {
+
+    public String get_commenter() {
         return _commenter;
     }
 
-    public void set_commenter(User _commenter) {
+    public void set_commenter(String _commenter) {
         this._commenter = _commenter;
     }
 
