@@ -5,22 +5,6 @@
     android:orientation="vertical"
     android:weightSum="10">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_weight="1">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Sign up"
-            android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="24sp" />
-
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,9 +15,9 @@
 
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="200dp"
             android:layout_gravity="center_vertical|center_horizontal"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@drawable/logo" />
 
     </LinearLayout>
 
@@ -52,13 +36,28 @@
             android:id="@+id/editTextName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="#3599D6"
+            android:textColorHint="#3599D6"
             android:hint="Name" />
 
         <EditText
             android:id="@+id/editTextEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="#3599D6"
+            android:textColorHint="#3599D6"
             android:hint="Email" />
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:inputType="textPassword"
+            android:backgroundTint="#3599D6"
+            android:layout_marginBottom="6dp"
+            android:textColor="#3599D6"
+            android:textColorHint="#3599D6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password" />
 
         <LinearLayout
             android:orientation="vertical"
@@ -70,6 +69,8 @@
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:textSize="18sp"
+                android:layout_marginTop="2dp"
+                android:textColor="#3599D6"
                 android:text="Type of User" />
 
 
@@ -77,33 +78,34 @@
                 android:layout_width="wrap_content"
                 android:orientation="horizontal"
                 android:id="@+id/userRadio"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:backgroundTint="#3599D6"
                 android:layout_height="wrap_content">
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="#3599D6"
                     android:text="Student"/>
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="#3599D6"
                     android:text="Alumni"/>
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="#3599D6"
                     android:text="Professor"/>
             </RadioGroup>
 
         </LinearLayout>
 
 
-        <EditText
-            android:id="@+id/editTextPassword"
-            android:inputType="textPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Password" />
+
 
 
     </LinearLayout>
@@ -120,12 +122,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|bottom"
+            android:background="#3599D6"
             android:paddingBottom="4dp"
             android:paddingLeft="64dp"
             android:paddingRight="64dp"
             android:paddingTop="4dp"
             android:text="Sign Up"
-            android:textColor="#000000" />
+            android:textColor="#ffffff" />
 
     </LinearLayout>
 
@@ -148,6 +151,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:textColor="#3599D6"
                 android:text="Already have an account? "
                 android:textAlignment="center"
                 android:textSize="16sp" />
@@ -157,6 +161,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:textColor="#3599D6"
                 android:text="Sign In"
                 android:textAlignment="center"
                 android:textSize="16sp"
