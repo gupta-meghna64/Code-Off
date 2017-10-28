@@ -143,12 +143,20 @@ public class NavDrawerActivity extends AppCompatActivity
             case R.id.nav_profile:
                 fragment = new ProfileFragment();
                 break;
+            case R.id.nav_addresource:
+                fragment = new AddResourceFragment();
+                break;
             case R.id.nav_resources:
                 fragment = new ResourcesFragment();
+                break;
+            case R.id.nav_addrequests:
+                fragment = new AddRequestFragment();
                 break;
             case R.id.nav_requests:
                 fragment = new RequestsFragment();
                 break;
+            case R.id.nav_blogs:
+                fragment = new BlogFragment();
         }
 
         //replacing the fragment

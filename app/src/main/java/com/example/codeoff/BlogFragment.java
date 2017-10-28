@@ -1,8 +1,8 @@
 package com.example.codeoff;
 
-import android.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,7 +47,7 @@ public class BlogFragment extends Fragment {
         mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot d : dataSnapshot.child("Blogs").getChildren()) {
+                for (DataSnapshot d : dataSnapshot.child("Blog").getChildren()) {
 
                     for (DataSnapshot e : d.getChildren()) {
 
@@ -56,6 +56,7 @@ public class BlogFragment extends Fragment {
                         TextView title = (TextView) v.findViewById(R.id.blogName);
                         TextView name = (TextView) v.findViewById(R.id.uploaderName);
                         TextView description = (TextView) v.findViewById(R.id.blogDescription);
+                        title.setText(b.get_title());
                         name.setText(b.get_uploader());
                         description.setText(b.get_description());
 
