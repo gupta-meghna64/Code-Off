@@ -26,8 +26,6 @@ import java.util.ArrayList;
 public class ResourcesFragment extends Fragment {
 
     private DatabaseReference mDatabase;
-    private ArrayList<LinearLayout> allUpvotes = new ArrayList<LinearLayout>();
-    private ArrayList<LinearLayout> allDownvotes = new ArrayList<LinearLayout>();;
 
     @Nullable
     @Override
@@ -62,10 +60,11 @@ public class ResourcesFragment extends Fragment {
                         TextView name = (TextView) v.findViewById(R.id.uploaderName);
                         TextView type = (TextView) v.findViewById(R.id.resourceType);
                         TextView description = (TextView) v.findViewById(R.id.resourceDescription);
-                        TextView upvotes = (TextView) v.findViewById(R.id.upvotesView);
-                        TextView downvotes = (TextView) v.findViewById(R.id.downvotesView);
-                        allUpvotes.add((LinearLayout) v.findViewById(R.id.resourceUpvote));
-                        allDownvotes.add((LinearLayout) v.findViewById(R.id.resourceDownvote));
+                        final TextView upvotes = (TextView) v.findViewById(R.id.upvotesView);
+                        final TextView downvotes = (TextView) v.findViewById(R.id.downvotesView);
+
+
+
                         heading.setText(r.get_title());
                         link.setText(r.get_link());
                         name.setText(r.get_uploader());
@@ -73,6 +72,21 @@ public class ResourcesFragment extends Fragment {
                         description.setText(r.get_description());
                         upvotes.setText(Integer.toString(r.get_upvotes()));
                         downvotes.setText(Integer.toString(r.get_downvotes()));
+
+
+                        v.findViewById(R.id.resourceUpvote).setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                upvotes.setText(Integer.toString(Integer.parseInt(upvotes.getText().toString())+1));
+                            }
+                        });
+
+                        v.findViewById(R.id.resourceDownvote).setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                downvotes.setText(Integer.toString(Integer.parseInt(downvotes.getText().toString())+1));
+                            }
+                        });
 
                         LinearLayout commentsLayout = (LinearLayout) v.findViewById(R.id.scrollViewLayout);
 
